@@ -1,0 +1,8 @@
+// Este eh um comentario de uma linha so.
+for (i = 0; i < 10; i++)
+{
+	/* Este eh um comentario de duas linhas.
+	O termino eh ocorre na proxima linha.
+	*/
+	printf("Valor de i %d", i); //Um comentario aqui nao deve ser computado.
+}

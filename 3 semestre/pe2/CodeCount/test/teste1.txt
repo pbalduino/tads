@@ -1,0 +1,15 @@
+Arquivo
+Segunda linha
+
+// comentario de uma linha
+/*
+linha comentada
+  outra linha comentada
+*/
+  // e aqui um comentario que nao comeca na primeira coluna
+fim
+
+em branco: 2 linhas
+comentadas: 6 linhas
+linhas de codigo: 7
+total: 15 linhas
