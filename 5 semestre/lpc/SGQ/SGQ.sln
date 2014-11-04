@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGQ", "SGQ\SGQ.csproj", "{D45A89BA-1D33-469B-AB4A-C3C9C1429511}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGQ Desktop", "SGQ Desktop\SGQ Desktop.csproj", "{D45A89BA-1D33-469B-AB4A-C3C9C1429511}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
