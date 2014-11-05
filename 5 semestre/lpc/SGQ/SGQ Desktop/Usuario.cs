@@ -6,6 +6,8 @@ namespace SGQ.Model
     {
         public readonly static Usuario INVALIDO = new Usuario(-1, "Inválido", "", "", TipoUsuario.Invalido);
 
+        public static Usuario UsuarioAtual = INVALIDO;
+
         private readonly long id;
         private readonly string nome;
         private readonly string login;

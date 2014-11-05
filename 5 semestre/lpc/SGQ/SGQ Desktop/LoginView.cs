@@ -18,7 +18,7 @@ namespace SGQ.View
             switch (usuario.Tipo)
             {
                 case TipoUsuario.Admin:
-                    acessoAdmin();
+                    acessoAdmin(usuario);
                     break;
                 case TipoUsuario.Usuario:
                     acessoUsuario();
@@ -52,16 +52,19 @@ namespace SGQ.View
             return Usuario.INVALIDO;
         }
 
-        internal void acessoAdmin()
+        internal void acessoAdmin(Usuario usuario)
         {
             Hide();
-            MainView main = new MainView();
+            MainView main = new MainView(usuario);
             main.Show();
         }
 
         internal void acessoUsuario()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Você não tem acesso ao ambiente de publicação",
+                            "Acesso negado",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
         }
     }
 }

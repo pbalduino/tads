@@ -47,11 +47,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Departamento.cs" />
+    <Compile Include="DepartamentoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartamentoView.Designer.cs">
+      <DependentUpon>DepartamentoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialView.Designer.cs">
+      <DependentUpon>MaterialView.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuarioView.cs">
       <SubType>Form</SubType>
@@ -70,8 +82,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DepartamentoView.resx">
+      <DependentUpon>DepartamentoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialView.resx">
+      <DependentUpon>MaterialView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioView.resx">
       <DependentUpon>UsuarioView.cs</DependentUpon>
