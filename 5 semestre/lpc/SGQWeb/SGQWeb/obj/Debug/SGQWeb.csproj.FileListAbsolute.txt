@@ -1,5 +1,0 @@
-c:\projetos\SGQWeb\SGQWeb\bin\SGQWeb.dll
-c:\projetos\SGQWeb\SGQWeb\bin\SGQWeb.pdb
-c:\projetos\SGQWeb\SGQWeb\obj\Debug\ResolveAssemblyReference.cache
-c:\projetos\SGQWeb\SGQWeb\obj\Debug\SGQWeb.dll
-c:\projetos\SGQWeb\SGQWeb\obj\Debug\SGQWeb.pdb

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace SGQWeb
 {
@@ -11,7 +6,16 @@ namespace SGQWeb
     {
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
-          Response.Redirect("Main.aspx");
+          if ((txtUsuario.Text.Equals("usuario") || txtUsuario.Text.Equals("senha"))
+              && txtSenha.Text.Equals("senha"))
+          {
+            Response.Redirect("consulta.aspx");
+          }
+          else
+          {
+            lblMensagem.Text = "Usuário ou senha inválidos";
+            lblMensagem.Visible = true;
+          }
         }
     }
 }

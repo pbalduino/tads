@@ -10,51 +10,51 @@
 namespace SGQWeb {
     
     
-    public partial class _Default {
+    public partial class material {
         
         /// <summary>
-        /// form1 control.
+        /// lblDepartamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblDepartamento;
         
         /// <summary>
-        /// txtUsuario control.
+        /// lblData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
+        protected global::System.Web.UI.WebControls.Label lblData;
         
         /// <summary>
-        /// txtSenha control.
+        /// lblTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSenha;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
-        /// btnEntrar control.
+        /// lblConteudo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEntrar;
+        protected global::System.Web.UI.WebControls.Label lblConteudo;
         
         /// <summary>
-        /// lblMensagem control.
+        /// btnVoltar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensagem;
+        protected global::System.Web.UI.WebControls.Button btnVoltar;
     }
 }
