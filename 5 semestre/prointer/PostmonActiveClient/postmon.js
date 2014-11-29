@@ -1,8 +1,17 @@
-var PostmonDaemon = function(interval, storage, uiManager) {
+var StubDaemon = function() {
+  this.start = function() { };
+};
 
+var PostmonDaemon = function(interval, storage, uiManager) {
+  var lastZip = storage.read("lastZip") || "01000";
+
+  this.start = function() {
+    
+  }
 };
 
 function Postmon(options) {
+
   var PostmonEmptyUI = function() {
     this.showWait = function() {};
     this.hideWait = function() {};
@@ -60,6 +69,12 @@ function Postmon(options) {
       xhr.send();
     }
   }
+
+  var StubStorage = function(id) {
+    this.insert = function(key, value) { };
+    this.read   = function(key) { };
+    this.removeItem = function(key) { };
+  };
 
   var LocalStorage = function(id) {
 
@@ -137,7 +152,18 @@ function Postmon(options) {
 
   var zipField = document.getElementById(options["zip"]);
 
-  var storage = new LocalStorage(options["storage"]);
-  var client  = new PostmonClient(options["api-url"], new PostmonRichUI());
-  var daemon  = new PostmonDaemon(options["interval"], storage, client);
+  var storage = !window.localStorage ?
+                new StubStorage() :
+                new LocalStorage(options["storage"]);
+
+  var client  = new PostmonClient(options["api-url"], 
+                                  new PostmonRichUI());
+
+  var daemon  = !window.localStorage ? 
+                new StubDaemon() :
+                new PostmonDaemon(options["interval"], 
+                                  storage, 
+                                  new PostmonEmptyUI());
+
+  daemon.start();
 }
