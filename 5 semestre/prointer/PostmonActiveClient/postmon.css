@@ -1,0 +1,13 @@
+.postmon-waiter {
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	background-color: red;
+	padding: 5px;
+	font-size: small;
+	font-family: helvetica, arial, sans-serif;
+	color: white;
+	font-weight: bold;
+	visibility: hidden;
+	z-index: 300;
+}
