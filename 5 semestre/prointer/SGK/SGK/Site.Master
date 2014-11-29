@@ -9,6 +9,7 @@
   <title>SGK Sistema Gerenciador</title>
   <link href="~/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
   <link href="~/styles/postmon.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="Scripts/postmon.js"></script>
   <asp:ContentPlaceHolder ID="HeadContent" runat="server">
   </asp:ContentPlaceHolder>
 </head>

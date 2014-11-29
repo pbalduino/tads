@@ -1,15 +1,3 @@
-var StubDaemon = function() {
-  this.start = function() { };
-};
-
-var PostmonDaemon = function(interval, storage, uiManager) {
-  var lastZip = storage.read("lastZip") || "01000";
-
-  this.start = function() {
-    
-  }
-};
-
 function Postmon(options) {
 
   var PostmonEmptyUI = function() {
@@ -106,6 +94,18 @@ function Postmon(options) {
       localStorage.removeItem(id + "." + key);
     };
   }
+
+  var StubDaemon = function() {
+    this.start = function() { };
+  };
+
+  var PostmonDaemon = function(interval, storage, uiManager) {
+    var lastZip = storage.read("lastZip") || "01000";
+
+    this.start = function() {
+      
+    }
+  };
 
   var loadDefaults = function(userOptions) {
     var options = userOptions || {};
