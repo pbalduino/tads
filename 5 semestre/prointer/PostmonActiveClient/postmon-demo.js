@@ -5,5 +5,5 @@ window.onload = function() {
                              city:         "cidade",
                              state:        "estado" });
 
-  var handler = new PostmonEventHandler();
+  document.getElementById("cep").onblur = postmon.trigger;
 };
