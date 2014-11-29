@@ -1,3 +1,11 @@
+var PostmonDaemon = function(interval, storage, uiManager) {
+
+};
+
+var PostmonEventHandler = function() {
+
+}
+
 function Postmon(options) {
   var PostmonEmptyUI = function() {
     this.showWait = function() {};
@@ -71,7 +79,10 @@ function Postmon(options) {
 
     this.read = function(key) {
       key = id + "." + key;
+
       var value = localStorage[key];
+
+      console.log(key, value);
 
       if(value !== undefined) {
         var obj = JSON.parse(value);
@@ -87,7 +98,57 @@ function Postmon(options) {
     };
   }
 
-  var storage = new LocalStorage("postmon.cache");
-  var client  = new PostmonClient("http://api.postmon.com.br/v1/cep/", new PostmonUI());
-  var daemon  = new PostmonDaemon(5000, storage, client);
+  var loadDefaults = function(userOptions) {
+    var options = userOptions || {};
+
+    options["interval"]     = options["interval"] || 5000;
+    options["api-url"]      = options["api-url"]  || "http://api.postmon.com.br/v1/cep/";
+    options["storage"]      = options["storage"]  || "postmon.cache";
+
+    return options;
+  }
+
+  var eventHandler = function(options) {
+    var zipField = document.getElementById(options["zip"]);
+
+    var populateFields = function(data) {
+      if(options["address"])
+        document.getElementById(options["address"]).value = data["endereco"] || data["logradouro"];
+
+      if(options["neighborhood"])
+        document.getElementById(options["neighborhood"]).value = data["bairro"];
+
+      if(options["city"])
+        document.getElementById(options["city"]).value = data["cidade"];
+
+      if(options["state"])
+        document.getElementById(options["state"]).value = data["estado"];
+    }
+
+    zipField.onblur = function() {
+      var zipCode = zipField.value;
+
+      var addressData = storage.read(zipCode);
+
+      if(!addressData) {
+        client.search(zipCode, function(data) {
+          addressData = data;
+          storage.insert(zipCode, addressData);
+
+          populateFields(addressData);
+        });
+      } else {
+        populateFields(addressData);
+      }
+    }
+  }
+
+  var options = loadDefaults(options);
+  console.log(options);
+
+  eventHandler(options);
+
+  var storage = new LocalStorage(options["storage"]);
+  var client  = new PostmonClient(options["api-url"], new PostmonRichUI());
+  var daemon  = new PostmonDaemon(options["interval"], storage, client);
 }
